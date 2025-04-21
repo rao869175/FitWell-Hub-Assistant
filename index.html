@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Chat with our Assistant</h1>
+    
+    <form method="POST">
+        <input type="text" name="user_input" placeholder="Ask a question..." required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    {% if response %}
+        <div class="response">
+            <h3>Response:</h3>
+            <p>{{ response }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
